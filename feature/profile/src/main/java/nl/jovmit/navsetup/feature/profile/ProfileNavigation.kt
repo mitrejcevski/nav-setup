@@ -15,5 +15,7 @@ fun NavGraphBuilder.profileScreen() {
 }
 
 fun NavController.navigateToProfile() {
-  navigate(ProfileDestination)
+  navigate(ProfileDestination) {
+    popUpTo(graph.id)
+  }
 }
