@@ -13,10 +13,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import nl.jovmit.navsetup.feature.emails.EmailsListDestination
+import nl.jovmit.navsetup.feature.emails.emailsListScreen
+import nl.jovmit.navsetup.feature.emails.navigateToEmailsList
+import nl.jovmit.navsetup.feature.profile.ProfileDestination
+import nl.jovmit.navsetup.feature.profile.navigateToProfile
+import nl.jovmit.navsetup.feature.profile.profileScreen
 import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @Composable
@@ -30,17 +37,21 @@ internal fun MainScreen(
     bottomBar = {
       MainBottomBar(
         hierarchy = navController.currentBackStackEntryAsState().value?.destination?.hierarchy,
-        onNavigateToEmails = {},
-        onNavigateToProfile = {}
+        onNavigateToEmails = { navController.navigateToEmailsList() },
+        onNavigateToProfile = { navController.navigateToProfile() }
       )
     }
   ) { paddingValues ->
     NavHost(
       modifier = Modifier.padding(paddingValues),
       navController = navController,
-      startDestination = ""
+      startDestination = EmailsListDestination
     ) {
-
+      emailsListScreen(
+        onOpenEmailDetails = onOpenEmailDetails,
+        onComposeNewEmail = onComposeNewEmail
+      )
+      profileScreen()
     }
   }
 }
@@ -53,12 +64,12 @@ private fun MainBottomBar(
 ) {
   NavigationBar {
     NavigationBarItem(
-      selected = true,
+      selected = hierarchy?.any { it.hasRoute(EmailsListDestination::class) } == true,
       icon = { Icon(imageVector = Icons.Default.Email, "emails") },
       onClick = onNavigateToEmails
     )
     NavigationBarItem(
-      selected = false,
+      selected = hierarchy?.any { it.hasRoute(ProfileDestination::class) } == true,
       icon = { Icon(imageVector = Icons.Default.Person, "profile") },
       onClick = onNavigateToProfile
     )
