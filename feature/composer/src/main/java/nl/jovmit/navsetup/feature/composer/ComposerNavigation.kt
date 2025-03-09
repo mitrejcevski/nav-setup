@@ -6,12 +6,12 @@ import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 
 @Serializable
-private data object ComposerDestination
+private data object ComposerRootDestination
 
-fun NavGraphBuilder.composerScreen(
+fun NavGraphBuilder.composerScreenRoot(
   onNavigateUp: () -> Unit
 ) {
-  composable<ComposerDestination> {
+  composable<ComposerRootDestination> {
     ComposerScreenRoot(
       onNavigateUp = onNavigateUp
     )
@@ -19,5 +19,5 @@ fun NavGraphBuilder.composerScreen(
 }
 
 fun NavController.navigateToComposer() {
-  navigate(ComposerDestination)
+  navigate(ComposerRootDestination)
 }
