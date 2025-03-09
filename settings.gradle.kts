@@ -23,3 +23,4 @@ rootProject.name = "NavSetup"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":shared:ui")
+include(":feature:login")

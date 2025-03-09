@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.login
+package nl.jovmit.navsetup.feature.login
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,7 +17,7 @@ import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(
+internal fun LoginScreen(
   onNavigateToMain: () -> Unit,
   onNavigateToSignUp: () -> Unit
 ) {
