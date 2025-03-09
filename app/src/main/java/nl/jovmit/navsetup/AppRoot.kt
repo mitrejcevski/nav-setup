@@ -3,6 +3,8 @@ package nl.jovmit.navsetup
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import nl.jovmit.navsetup.emaildetails.emailDetailsScreen
+import nl.jovmit.navsetup.emaildetails.navigateToEmailDetails
 import nl.jovmit.navsetup.login.LoginDestination
 import nl.jovmit.navsetup.login.loginScreen
 import nl.jovmit.navsetup.main.mainScreen
@@ -26,8 +28,12 @@ fun AppRoot() {
       onNavigateUp = { navController.navigateUp() }
     )
     mainScreen(
-      onOpenEmailDetails = {},
+      onOpenEmailDetails = { emailId: Int -> navController.navigateToEmailDetails(emailId) },
       onComposeNewEmail = {}
+    )
+    emailDetailsScreen(
+      onReplyToEmail = {},
+      onNavigateUp = { navController.navigateUp() }
     )
   }
 }
