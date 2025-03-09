@@ -13,8 +13,9 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setContent {
       NavSetupTheme {
-        //TODO Add implementation here
+        AppRoot()
       }
     }
   }
 }
+
