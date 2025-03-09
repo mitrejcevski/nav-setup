@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.emails
+package nl.jovmit.navsetup.feature.emails
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.WindowInsets
@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @Composable
-fun EmailsListScreen(
+internal fun EmailsListScreen(
   onOpenEmailDetails: (id: Int) -> Unit,
   onComposeNewEmail: () -> Unit
 ) {
