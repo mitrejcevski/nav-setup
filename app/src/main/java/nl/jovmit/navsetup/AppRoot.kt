@@ -6,6 +6,7 @@ import androidx.navigation.compose.rememberNavController
 import nl.jovmit.navsetup.login.LoginDestination
 import nl.jovmit.navsetup.login.loginScreen
 import nl.jovmit.navsetup.signup.navigateToSignUp
+import nl.jovmit.navsetup.signup.signUpScreen
 
 @Composable
 fun AppRoot() {
@@ -17,6 +18,10 @@ fun AppRoot() {
     loginScreen(
       onNavigateToMain = {},
       onNavigateToSignUp = { navController.navigateToSignUp() }
+    )
+    signUpScreen(
+      onNavigateToMain = {},
+      onNavigateUp = { navController.navigateUp() }
     )
   }
 }
