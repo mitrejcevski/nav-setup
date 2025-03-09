@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.signup
+package nl.jovmit.navsetup.feature.signup
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +20,7 @@ import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SignUpScreen(
+internal fun SignUpScreen(
   onNavigateToMain: () -> Unit,
   onNavigateUp: () -> Unit
 ) {
