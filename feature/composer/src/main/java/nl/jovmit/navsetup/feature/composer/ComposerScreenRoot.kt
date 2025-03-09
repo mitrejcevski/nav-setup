@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.composer
+package nl.jovmit.navsetup.feature.composer
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
