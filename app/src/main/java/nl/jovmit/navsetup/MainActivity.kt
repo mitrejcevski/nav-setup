@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import nl.jovmit.navsetup.ui.theme.NavSetupTheme
+import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 class MainActivity : ComponentActivity() {
 

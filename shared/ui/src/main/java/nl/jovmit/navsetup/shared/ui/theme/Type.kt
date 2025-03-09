@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.ui.theme
+package nl.jovmit.navsetup.shared.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

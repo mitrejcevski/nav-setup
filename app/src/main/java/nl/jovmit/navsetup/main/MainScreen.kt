@@ -9,7 +9,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavDestination
-import nl.jovmit.navsetup.ui.theme.NavSetupTheme
+import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @Composable
 fun MainScreen(

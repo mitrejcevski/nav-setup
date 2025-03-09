@@ -1,22 +1,18 @@
 plugins {
-  alias(libs.plugins.android.application)
+  alias(libs.plugins.android.library)
   alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.compose)
-  alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-  namespace = "nl.jovmit.navsetup"
+  namespace = "nl.jovmit.navsetup.shared.ui"
   compileSdk = libs.versions.compileSdkVersion.get().toInt()
 
   defaultConfig {
-    applicationId = "nl.jovmit.navsetup"
     minSdk = libs.versions.minSdkVersion.get().toInt()
-    targetSdk = libs.versions.compileSdkVersion.get().toInt()
-    versionCode = 1
-    versionName = "1.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    consumerProguardFiles("consumer-rules.pro")
   }
 
   buildTypes {
@@ -35,22 +31,11 @@ android {
   kotlinOptions {
     jvmTarget = libs.versions.javaVersion.get()
   }
-
-  buildFeatures {
-    compose = true
-  }
 }
 
 dependencies {
-  implementation(projects.shared.ui)
-  implementation(libs.bundles.androidx)
+  api(platform(libs.androidx.compose.bom))
+  api(libs.bundles.compose)
 
   debugImplementation(libs.bundles.compose.debug)
-
-  androidTestImplementation(platform(libs.androidx.compose.bom))
-  androidTestImplementation(libs.androidx.junit)
-  androidTestImplementation(libs.androidx.espresso.core)
-  androidTestImplementation(libs.androidx.ui.test.junit4)
-
-  testImplementation(libs.junit)
 }

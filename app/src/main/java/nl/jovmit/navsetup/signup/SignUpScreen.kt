@@ -16,7 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import nl.jovmit.navsetup.ui.theme.NavSetupTheme
+import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
