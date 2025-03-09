@@ -19,5 +19,9 @@ fun NavGraphBuilder.composerScreenRoot(
 }
 
 fun NavController.navigateToComposer() {
-  navigate(ComposerRootDestination)
+  navigate(ComposerRootDestination) {
+    popUpTo<ComposerRootDestination> {
+      inclusive = true
+    }
+  }
 }
