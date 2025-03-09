@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.composer
+package nl.jovmit.navsetup.feature.composer
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +20,7 @@ import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ComposerScreen(
+internal fun ComposerScreen(
   onNavigateUp: () -> Unit,
   onOpenSettings: () -> Unit
 ) {
