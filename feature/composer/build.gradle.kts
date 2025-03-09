@@ -36,6 +36,7 @@ android {
 
 dependencies {
   implementation(projects.shared.ui)
+  implementation(projects.feature.composersettings)
 
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
