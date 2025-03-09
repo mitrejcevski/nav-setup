@@ -5,6 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import nl.jovmit.navsetup.login.LoginDestination
 import nl.jovmit.navsetup.login.loginScreen
+import nl.jovmit.navsetup.main.mainScreen
+import nl.jovmit.navsetup.main.navigateToMain
 import nl.jovmit.navsetup.signup.navigateToSignUp
 import nl.jovmit.navsetup.signup.signUpScreen
 
@@ -16,12 +18,16 @@ fun AppRoot() {
     startDestination = LoginDestination
   ) {
     loginScreen(
-      onNavigateToMain = {},
+      onNavigateToMain = { navController.navigateToMain() },
       onNavigateToSignUp = { navController.navigateToSignUp() }
     )
     signUpScreen(
-      onNavigateToMain = {},
+      onNavigateToMain = { navController.navigateToMain() },
       onNavigateUp = { navController.navigateUp() }
+    )
+    mainScreen(
+      onOpenEmailDetails = {},
+      onComposeNewEmail = {}
     )
   }
 }
