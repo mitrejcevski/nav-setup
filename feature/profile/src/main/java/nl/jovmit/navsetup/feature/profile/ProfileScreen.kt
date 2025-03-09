@@ -1,4 +1,4 @@
-package nl.jovmit.navsetup.profile
+package nl.jovmit.navsetup.feature.profile
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @Composable
-fun ProfileScreen() {
+internal fun ProfileScreen() {
   Scaffold(
     modifier = Modifier.fillMaxSize(),
     contentWindowInsets = WindowInsets(0.dp)
