@@ -22,7 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import nl.jovmit.navsetup.ui.theme.NavSetupTheme
+import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @Composable
 fun EmailsListScreen(

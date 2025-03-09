@@ -2,7 +2,7 @@ package nl.jovmit.navsetup.composer
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import nl.jovmit.navsetup.ui.theme.NavSetupTheme
+import nl.jovmit.navsetup.shared.ui.theme.NavSetupTheme
 
 @Composable
 fun ComposerScreenRoot(
