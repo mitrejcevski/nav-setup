@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.serialization.Serializable
+import nl.jovmit.navsetup.composersettings.composerSettingsScreen
+import nl.jovmit.navsetup.composersettings.navigateToComposerSettings
 import nl.jovmit.navsetup.ui.theme.NavSetupTheme
 
 @Serializable
@@ -23,9 +25,12 @@ fun ComposerScreenRoot(
     composable<ComposerDestination> {
       ComposerScreen(
         onNavigateUp = onNavigateUp,
-        onOpenSettings = {}
+        onOpenSettings = { navController.navigateToComposerSettings() }
       )
     }
+    composerSettingsScreen(
+      onNavigateUp = { navController.navigateUp() }
+    )
   }
 }
 
