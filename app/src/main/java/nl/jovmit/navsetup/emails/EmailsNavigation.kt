@@ -21,5 +21,7 @@ fun NavGraphBuilder.emailsListScreen(
 }
 
 fun NavController.navigateToEmailsList() {
-  navigate(EmailsListDestination)
+  navigate(EmailsListDestination) {
+    popUpTo(graph.id)
+  }
 }
